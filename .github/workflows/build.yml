@@ -9,9 +9,9 @@ jobs:
     strategy:
       matrix:
         nurRepo:
-          - dan4ik
+          - dan4ik605743
         cachixName:
-          - dan4ik
+          - dan4ik605743
         nixPath:
           - nixpkgs=channel:nixos-unstable
           - nixpkgs=channel:nixpkgs-unstable
@@ -27,7 +27,7 @@ jobs:
       run: nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
     - name: Setup cachix
       uses: cachix/cachix-action@v10
-      if: ${{ matrix.cachixName != 'dan4ik' }}
+      if: ${{ matrix.cachixName != 'dan4ik605743' }}
       with:
         name: ${{ matrix.cachixName }}
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
