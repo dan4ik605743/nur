@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         nurRepo:
-          - dan4ik605743
+          - dan4ik
         cachixName:
           - dan4ik
         nixPath:
