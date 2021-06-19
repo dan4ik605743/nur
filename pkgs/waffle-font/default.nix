@@ -1,15 +1,16 @@
 { stdenv
-, fetchurl
+, lib
+, fetchgit
 , mkfontscale
 }:
 
 stdenv.mkDerivation 
 {
   name = "waffle-font";
-  src = fetchurl 
+  src = fetchgit 
   {
-    url = "https://gitlab.com/dan4ik605743/dotfiles/-/raw/master/home/dan4ik/.local/share/fonts/waffle-10.bdf";
-    sha256 = "0z4qm4v1rqfappd3zk8ycvvnxfny15p3s6gwd0ns2icy0vxkyvas";
+    url = "https://github.com/addy-dclxvi/bitmap-font-collections";
+    sha256 = "sha256-a0MA2jIH7J4Btm8JBi7EHjI3Pt/ZaCZK6JqNH7PLSvM=";
   };
   dontUnpack = true;
   nativeBuildInputs =
@@ -19,9 +20,15 @@ stdenv.mkDerivation
   installPhase = 
   ''
     mkdir -p $out/share/fonts/
-    cp $src $out/share/fonts/
+    cp $src/waffle-10.bdf $out/share/fonts/
     cd "$out/share/fonts"
     mkfontdir
     mkfontscale
   '';
+  meta = with lib; {
+    description = "bitmap-font";
+    homepage = "https://github.com/addy-dclxvi/bitmap-font-collections";
+    license = licenses.mit;
+    maintainers = with maintainers; [ dan4ik605743 ];
+  };
 }

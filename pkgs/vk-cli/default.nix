@@ -51,4 +51,10 @@ stdenv.mkDerivation rec
       --set-rpath "${libPath}" \
       $out/bin/vk
      '';
+  meta = with lib; {
+    description = "A console (ncurses) client for vk.com written in D";
+    homepage = "https://github.com/vk-cli/vk";
+    license = licenses.mit;
+    maintainers = with maintainers; [ dan4ik605743 ];
+  };
 }

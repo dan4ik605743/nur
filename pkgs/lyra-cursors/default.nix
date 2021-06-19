@@ -1,4 +1,5 @@
 { stdenv
+, lib
 , fetchFromGitHub
 }:
 
@@ -17,4 +18,10 @@ stdenv.mkDerivation
     install -dm 755 $out/share/icons
     cp -dr --no-preserve='ownership' Lyra{B,F,G,P,Q,X}-cursors $out/share/icons/
   '';
+  meta = with lib; {
+    description = "This is an x-cursor theme inspired by macOS and based on capitaine-cursors";
+    homepage = "https://github.com/yeyushengfan258/Lyra-Cursors";
+    license = licenses.mit;
+    maintainers = with maintainers; [ dan4ik605743 ];
+  };
 }

@@ -1,6 +1,7 @@
 {
   stdenv
   ,fetchFromGitHub
+  ,lib
   ,xorg
   ,libconfig
   ,libdrm
@@ -72,4 +73,10 @@ stdenv.mkDerivation
     rm build -rf
     ln -sf $out/bin/compton $out/bin/picom
   '';
+  meta = with lib; {
+    description = "A compositor for X11";
+    homepage = "https://github.com/chjj/compton";
+    license = licenses.mit;
+    maintainers = with maintainers; [ dan4ik605743 ];
+  };
 }

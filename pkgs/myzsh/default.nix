@@ -1,4 +1,5 @@
 { stdenv
+, lib
 , fetchFromGitHub
 , fetchurl
 , oh-my-zsh 
@@ -33,4 +34,10 @@ in
     cp ${mytheme} $out/share/oh-my-zsh/themes/my.zsh-theme
     cp $src/* $out -r
   '';
+  meta = with lib; {
+    description = "Custom oh-my-zsh";
+    homepage = "https://github.com/ohmyzsh/ohmyzsh";
+    license = licenses.mit;
+    maintainers = with maintainers; [ dan4ik605743 ];
+  };
 }
