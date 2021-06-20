@@ -77,6 +77,5 @@ stdenv.mkDerivation
     description = "A compositor for X11";
     homepage = "https://github.com/chjj/compton";
     license = licenses.mit;
-    maintainers = with maintainers; [ dan4ik605743 ];
   };
 }

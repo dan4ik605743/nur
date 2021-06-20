@@ -29,6 +29,5 @@ stdenv.mkDerivation
     description = "bitmap-font";
     homepage = "https://github.com/addy-dclxvi/bitmap-font-collections";
     license = licenses.mit;
-    maintainers = with maintainers; [ dan4ik605743 ];
   };
 }
