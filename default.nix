@@ -11,4 +11,5 @@
   sddm-chili = pkgs.callPackage ./pkgs/sddm-chili { };
   htop-solarized = pkgs.callPackage ./pkgs/htop-solarized { };
   solarized-icons = pkgs.callPackage ./pkgs/solarized-icons { };
+  simp1e-cursors = pkgs.callPackage ./pkgs/simp1e-curosrs { };
 }
